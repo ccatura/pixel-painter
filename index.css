@@ -1,0 +1,41 @@
+* {
+	box-sizing: border-box;
+}
+
+.canvas-container {
+	/* width: 350px; */
+	/* height: 470px; */
+	/* border: 2px solid black; */
+	padding: 2em;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.pixels-container {
+	border: 1px solid red;
+	height: 100%;
+	/* width: 100%; */
+	display: flex;
+	flex-flow: column nowrap;
+/* 	justify-content: space-between; */
+/* 	align-items: space-between; */
+	background-color: lightgray;
+}
+
+.row {
+	display: flex;
+}
+
+.pixel {
+	width: 20px;
+	height: 20px;
+	background-color: gray;
+	margin: 3px;
+}
+
+input {
+	width: 50px;
+	margin-right: 1em;
+}
