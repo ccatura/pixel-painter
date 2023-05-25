@@ -1,26 +1,13 @@
 class PixelGrid {
 	constructor(paintColor, bgColor, pixelsContainer, makePixelsButton) {
 
-
-		this.paintColor 		= paintColor;
-		this.bgColor			= bgColor;
-		this.pixelsContainer 	= pixelsContainer;
-		this.currentColor		= 'black';
-		this.currentbgColor		= 'gray';
-		this.controlKeyDown		= false;
-		this.makePixelsButton	= makePixelsButton;
-
-
-
-
-
-		// var paintColor = document.getElementById('color-pixel');
-		// var bgColor = document.getElementById('color-bg');
-		// var pixelsContainer = document.getElementById('pixels-container-1');
-		// var currentColor = "black";
-		// var currentbgColor = "black";
-		// var controlKeyDown = false;
-		// var makePixelsButton = document.getElementById('make-pixels');
+		var paintColor 			= paintColor;
+		var bgColor				= bgColor;
+		var pixelsContainer 	= pixelsContainer;
+		var currentColor		= paintColor;
+		var currentbgColor		= bgColor;
+		var controlKeyDown		= false;
+		var makePixelsButton	= makePixelsButton;
 
 		// Listen for controlKeyDown key press
 		window.addEventListener('keydown', function (e) {
@@ -38,6 +25,9 @@ class PixelGrid {
 
 		paintColor.addEventListener('change', function() {
 			currentColor = paintColor.value;
+			console.log('paintcolor: ' + paintColor.value);
+			console.log('currentcolor: ' + currentColor);
+
 		})
 
 		bgColor.addEventListener('input', function() {
@@ -50,7 +40,7 @@ class PixelGrid {
 			populatePixels();
 			var allPixels = getAllPixels();
 			addPixelEventListeners(allPixels);
-			addPixelEventListeners(allPixels);
+			// addPixelEventListeners(allPixels);
 		})
 
 
@@ -64,6 +54,7 @@ class PixelGrid {
 			for (var a = 0; a < allP.length; a++) {
 				allP[a].addEventListener('click', function() {
 					this.style.backgroundColor = currentColor;
+					console.log('current color: ' + currentColor);
 				})
 			}
 
@@ -109,6 +100,10 @@ class PixelGrid {
 	}
 }
 
+// straighten this shit out. make it clear what they all are: eg: color picker? or the color or the div???
+var paintColorElement = document.getElementById('color-pixel');
+var bgColorElement = document.getElementById('color-bg');
+var pixelsContainer = document.getElementById('pixels-container-1');
+var makePixels = document.getElementById('make-pixels')
 
-
-var aaa = new PixelGrid(document.getElementById('color-pixel'), document.getElementById('color-bg'), document.getElementById('pixels-container-1'), document.getElementById('make-pixels'));
+new PixelGrid(paintColorElement, bgColorElement, pixelsContainer, makePixels);
